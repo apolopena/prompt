@@ -13,7 +13,7 @@ Currently the official `prompt` [repository](https://github.com/flatiron/prompt)
 
 ## Changes in this fork
 
-* Supports Node 14 LTS.
+* Supports Node 14.x. See [here](https://github.com/flatiron/prompt/issues/199).
   * `winston` dependency  bumped up to version `3.x`
 * `.get()` returns a promise. See [here](https://github.com/flatiron/prompt/commit/8d5495c84c3f433b8f26ea2798f8ba68c3656459).
 
