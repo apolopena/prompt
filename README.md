@@ -8,6 +8,28 @@ A beautiful command-line prompt for node.js
 * supports validation and defaults
 * hides passwords
 
+## Why use this fork?
+Currently the official `prompt` [repository](https://github.com/flatiron/prompt) has no maintainers or anyone able to publish changes to `npm`. The project as of the time of writing this is pretty much dead. This fork simply rolls out some very simple, non-breaking enhancements and fixes, all of which are listed below. It is hoped that one day the sweet, little, lightweight module that is `prompt` will come back to life in a offical capacity. The changes found in this fork merged into the offical `prompt` repo and the `npm` registry updated. Until then feel free to use this fork to your hearts desire.
+
+## Changes in this fork
+
+* Supports Node 14 LTS.
+  * `winston` dependency  bumped up to version `3.x`
+* `.get()` returns a promise. See [here](https://github.com/flatiron/prompt/commit/8d5495c84c3f433b8f26ea2798f8ba68c3656459).
+
+## How to use this fork
+
+  * ### To update an existing installation of `prompt`.
+    * Update your existing `prompt` dependency to use this fork
+      * In your projects `package.json` in `dependencies` and/or `devDependecies` replace the line: `"prompt": "^1.0.0",` with `"prompt": "https://github.com/apolopena/prompt.git",`
+    * `postinstall` step (recommeded)
+      * In your projects `package.json` in `scripts` add the line: `"postinstall": "cd ./node_modules/prompt && npm install"`
+  * ### To add this fork of `prompt` to your project for the first time.
+    * Set a `prompt` dependency (this fork) in your projects `package.json`
+      * In your projects `package.json` in `dependencies` or `devDependecies` (depending on how you want this fork to be installed) add the line: `"prompt": "https://github.com/apolopena/prompt.git"`
+    * `postinstall` step (recommeded)
+      * In your projects `package.json` in `scripts` add the line: `"postinstall": "cd ./node_modules/prompt && npm install"`
+      
 ## Usage
 Using prompt is relatively straight forward. There are two core methods you should be aware of: `prompt.get()` and `prompt.addProperties()`. Their methods take strings representing property names in addition to objects for complex property validation (and more). There are a number of [examples][0] that you should examine for detailed usage.
 
